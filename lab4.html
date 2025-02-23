@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>INST377 - Lab 4!</title>
+        <style>
+            .mainBoxes {
+                background-color:aquamarine;
+                border:3px solid burlywood;
+                border-radius:10px;
+                text-align: center;
+                width:40%;
+                margin-top: 10px;
+                margin-left:10px;
+                padding: 10px;
+                display:inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="header">INST377 - Lab 4!</h1>
+        
+        <div class = "mainBoxes">
+        <!-- Alert Me -->
+            <form name="alertForm" onsubmit="alertMe()">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <input type="submit" value="Alert Me!">
+            </form>
+
+            <script type="text/javascript">
+                function alertMe() {
+                    alert("Hello " + document.getElementById("name").value + "!");
+                }
+            </script>
+        </div>
+        <!-- Change Color -->
+        <div class = "mainBoxes">
+            <button onclick="changeColor()">Change Color</button>
+
+            <script type="text/javascript">
+                function changeColor() {
+                    if (document.body.style.backgroundColor == 'burlywood') {
+                        document.body.style.backgroundColor = 'aquamarine'
+                    } else {
+                        document.body.style.backgroundColor = 'burlywood'
+                    }
+                }
+            </script>
+        </div>    
+        <!-- Text Tester -->
+        <div class = "mainBoxes">
+            <form name="textTester" onsubmit="return formValidation()">
+                <label for="validateText">Text Tester</label>
+                <input type="text" id="validateText" required>
+                <input type="submit" value="Validate Text">
+            </form>
+
+            <script type="text/javascript">
+                function formValidation() {
+                    var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                    if (document.textTester.validateText.value.trim() == "") {
+                        alert("Don't leave it empty!")
+                        return false;
+                    }
+
+                    if (validation.test(document.textTester.validateText.value)) {
+                        alert("No way Jose! No special characters allowed!")
+                        return false;
+                    }
+                }
+            </script>
+        </div>
+        <!-- Add Text -->
+        <div class="mainBoxes">
+            <button onclick="return addText()">Add Text</button>
+
+            <script>
+                function addText() {
+                    header.append(" - Heres's Some More Text!")
+                }
+            </script>
+        </div>
+    </body>
+</html>
