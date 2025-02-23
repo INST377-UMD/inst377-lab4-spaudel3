@@ -3,14 +3,15 @@
         <title>INST377 - Lab 4!</title>
         <style>
             .mainBoxes {
-                background-color: blueviolet;
-                border:2px solid black;
-                border-radius:5px;
+                background-color:aquamarine;
+                border:3px solid burlywood;
+                border-radius:10px;
                 text-align: center;
-                width:50%;
+                width:40%;
                 margin-top: 10px;
-                padding: 5px;
-                float: center;
+                margin-left:10px;
+                padding: 10px;
+                display:inline-block;
             }
         </style>
     </head>
@@ -27,7 +28,7 @@
 
             <script type="text/javascript">
                 function alertMe() {
-                    alert("Hello", );
+                    alert("Hello " + document.getElementById("name").value + "!");
                 }
             </script>
         </div>
@@ -37,10 +38,10 @@
 
             <script type="text/javascript">
                 function changeColor() {
-                    if (document.body.style.backgroundColor == 'orange') {
-                        document.body.style.backgroundColor = 'green'
+                    if (document.body.style.backgroundColor == 'burlywood') {
+                        document.body.style.backgroundColor = 'aquamarine'
                     } else {
-                        document.body.style.backgroundColor = 'orange'
+                        document.body.style.backgroundColor = 'burlywood'
                     }
                 }
             </script>
@@ -78,6 +79,5 @@
                 }
             </script>
         </div>
-        
     </body>
 </html>
